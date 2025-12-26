@@ -1,0 +1,289 @@
+ESP-ROM:esp32p4-eco1-20240205
+Build:Feb  5 2024
+rst:0x1 (POWERON),boot:0x30f (SPI_FAST_FLASH_BOOT)
+SPI mode:DIO, clock div:1
+load:0x4ff33ce0,len:0x1674
+load:0x4ff2abd0,len:0xe64
+load:0x4ff2cbd0,len:0x3344
+entry 0x4ff2abda
+[0;33mW (24) pmu_param: hp_cali_dbias not burnt in efuse, use default.[0m
+[0;33mW (25) pmu_param: lp_cali_dbias not burnt in efuse, use default.[0m
+[0;32mI (36) boot: ESP-IDF v5.4.3-544-ge6cad886e8 2nd stage bootloader[0m
+[0;32mI (36) boot: compile time Dec 23 2025 17:01:38[0m
+[0;32mI (36) boot: Multicore bootloader[0m
+[0;32mI (39) boot: chip revision: v0.1[0m
+[0;32mI (40) boot: efuse block revision: v0.0[0m
+[0;32mI (44) boot.esp32p4: SPI Speed      : 80MHz[0m
+[0;32mI (48) boot.esp32p4: SPI Mode       : DIO[0m
+[0;32mI (52) boot.esp32p4: SPI Flash Size : 2MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (60) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=400b0020 size=1e4a0h (124064) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0002e4c8 vaddr=30100000 size=00044h (    68) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0002e514 vaddr=4ff00000 size=01b04h (  6916) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=40000020 size=a3b94h (670612) map[0m
+[0;32mI (244) esp_image: segment 4: paddr=000d3bbc vaddr=4ff01b04 size=108d4h ( 67796) load[0m
+[0;32mI (259) esp_image: segment 5: paddr=000e4498 vaddr=4ff12400 size=02a1ch ( 10780) load[0m
+[0;32mI (266) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (267) boot: Disabling RNG early entropy source...[0m
+[0;33mW (277) pmu_pvt: blk_version is less than 2, pvt auto dbias init not supported in efuse.[0m
+[0;32mI (278) cpu_start: Multicore app[0m
+[0;32mI (288) cpu_start: GPIO 38 and 37 are used as console UART I/O pins[0m
+[0;32mI (288) cpu_start: Pro cpu start user code[0m
+[0;32mI (288) cpu_start: cpu freq: 360000000 Hz[0m
+[0;32mI (290) app_init: Application information:[0m
+[0;32mI (294) app_init: Project name:     p4_mqtt_cam[0m
+[0;32mI (298) app_init: App version:      1[0m
+[0;32mI (301) app_init: Compile time:     Dec 24 2025 13:22:37[0m
+[0;32mI (306) app_init: ELF file SHA256:  6013fe465...[0m
+[0;32mI (311) app_init: ESP-IDF:          v5.4.3-544-ge6cad886e8[0m
+[0;32mI (316) efuse_init: Min chip rev:     v0.1[0m
+[0;32mI (320) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (324) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (328) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (334) heap_init: At 4FF19F40 len 00021080 (132 KiB): RETENT_RAM[0m
+[0;32mI (340) heap_init: At 4FF3AFC0 len 00004BF0 (18 KiB): RAM[0m
+[0;32mI (345) heap_init: At 4FF40000 len 00060000 (384 KiB): RAM[0m
+[0;32mI (350) heap_init: At 50108080 len 00007F80 (31 KiB): RTCRAM[0m
+[0;32mI (355) heap_init: At 30100044 len 00001FBC (7 KiB): TCM[0m
+[0;32mI (361) spi_flash: detected chip: generic[0m
+[0;32mI (364) spi_flash: flash io: dio[0m
+[0;33mW (367) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (380) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (386) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (393) main_task: Started on CPU0[0m
+[0;32mI (413) main_task: Calling app_main()[0m
+[0;32mI (433) wifi:wifi driver task: 4ff235e4, prio:23, stack:6656, core=0[0m
+[0;32mI (433) wifi:wifi Rxcontrol 28[0m
+[1;31mE (433) esp_adapter: Not support read mac[0m
+[1;31mE (433) esp_adapter: Not support read mac[0m
+[0;32mI (433) wifi:wifi firmware version: b0dd30a[0m
+[0;32mI (433) wifi:wifi certification version: v7.0[0m
+[0;32mI (443) wifi:config NVS flash: enabled[0m
+[0;32mI (443) wifi:config nano formatting: disabled[0m
+[0;32mI (453) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (453) wifi:Init management frame dynamic rx buffer num: 32[0m
+[0;32mI (463) wifi:Init management short buffer num: 32[0m
+[0;32mI (463) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (463) wifi_init: rx ba win: 6[0m
+[0;32mI (473) wifi_init: accept mbox: 6[0m
+[0;32mI (473) wifi_init: tcpip mbox: 32[0m
+[0;32mI (473) wifi_init: udp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp tx win: 5760[0m
+[0;32mI (483) wifi_init: tcp rx win: 5760[0m
+[0;32mI (493) wifi_init: tcp mss: 1440[0m
+[0;32mI (493) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (493) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (503) wifi_sta: Connecting to SSID="Bjorn" BSSID=F0:21:E0:90:8F:E6 ch=0 (WPA2 min)[0m
+[0;32mI (503) wifi:mode : sta (00:00:00:00:00:00)[0m
+[0;32mI (513) wifi:enable tsf[0m
+[0;32mI (513) wifi:add interface index 0 [0m
+[0;32mI (513) wifi_sta: WIFI_EVENT_STA_START -> esp_wifi_connect()[0m
+[0;33mW (2923) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (2923) wifi_sta: Retrying Wi-Fi... (1/10)[0m
+[0;33mW (5323) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (5323) wifi_sta: Retrying Wi-Fi... (2/10)[0m
+[0;33mW (6523) wifi:m f probe req l=0[0m
+
+[0;33mW (7723) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (7723) wifi_sta: Retrying Wi-Fi... (3/10)[0m
+[0;33mW (7723) wifi:m f probe req l=0[0m
+
+[0;33mW (7843) wifi:m f probe req l=0[0m
+
+[0;33mW (7963) wifi:m f probe req l=0[0m
+
+[0;33mW (8083) wifi:m f probe req l=0[0m
+
+[0;33mW (8203) wifi:m f probe req l=0[0m
+
+[0;33mW (8323) wifi:m f probe req l=0[0m
+
+[0;33mW (8443) wifi:m f probe req l=0[0m
+
+[0;33mW (8563) wifi:m f probe req l=0[0m
+
+[0;33mW (8683) wifi:m f probe req l=0[0m
+
+[0;33mW (8803) wifi:m f probe req l=0[0m
+
+[0;33mW (8923) wifi:m f probe req l=0[0m
+
+[0;33mW (10123) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (10123) wifi_sta: Retrying Wi-Fi... (4/10)[0m
+[0;33mW (10123) wifi:m f probe req l=0[0m
+
+[0;33mW (10243) wifi:m f probe req l=0[0m
+
+[0;33mW (10363) wifi:m f probe req l=0[0m
+
+[0;33mW (10483) wifi:m f probe req l=0[0m
+
+[0;33mW (10603) wifi:m f probe req l=0[0m
+
+[0;33mW (10723) wifi:m f probe req l=0[0m
+
+[0;33mW (10843) wifi:m f probe req l=0[0m
+
+[0;33mW (10963) wifi:m f probe req l=0[0m
+
+[0;33mW (11083) wifi:m f probe req l=0[0m
+
+[0;33mW (11203) wifi:m f probe req l=0[0m
+
+[0;33mW (11333) wifi:m f probe req l=0[0m
+
+[0;33mW (12533) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (12533) wifi_sta: Retrying Wi-Fi... (5/10)[0m
+[0;33mW (12533) wifi:m f probe req l=0[0m
+
+[0;33mW (12653) wifi:m f probe req l=0[0m
+
+[0;33mW (12773) wifi:m f probe req l=0[0m
+
+[0;33mW (12893) wifi:m f probe req l=0[0m
+
+[0;33mW (13013) wifi:m f probe req l=0[0m
+
+[0;33mW (13133) wifi:m f probe req l=0[0m
+
+[0;33mW (13253) wifi:m f probe req l=0[0m
+
+[0;33mW (13373) wifi:m f probe req l=0[0m
+
+[0;33mW (13493) wifi:m f probe req l=0[0m
+
+[0;33mW (13613) wifi:m f probe req l=0[0m
+
+[0;33mW (13733) wifi:m f probe req l=0[0m
+
+[0;33mW (14933) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (14933) wifi_sta: Retrying Wi-Fi... (6/10)[0m
+[0;33mW (14933) wifi:m f probe req l=0[0m
+
+[0;33mW (15053) wifi:m f probe req l=0[0m
+
+[0;33mW (15173) wifi:m f probe req l=0[0m
+
+[0;33mW (15293) wifi:m f probe req l=0[0m
+
+[0;33mW (15413) wifi:m f probe req l=0[0m
+
+[0;33mW (15533) wifi:m f probe req l=0[0m
+
+[0;33mW (15653) wifi:m f probe req l=0[0m
+
+[0;33mW (15773) wifi:m f probe req l=0[0m
+
+[0;33mW (15893) wifi:m f probe req l=0[0m
+
+[0;33mW (16013) wifi:m f probe req l=0[0m
+
+[0;33mW (16133) wifi:m f probe req l=0[0m
+
+[0;33mW (17333) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (17333) wifi_sta: Retrying Wi-Fi... (7/10)[0m
+[0;33mW (17333) wifi:m f probe req l=0[0m
+
+[0;33mW (17453) wifi:m f probe req l=0[0m
+
+[0;33mW (17573) wifi:m f probe req l=0[0m
+
+[0;33mW (17693) wifi:m f probe req l=0[0m
+
+[0;33mW (17813) wifi:m f probe req l=0[0m
+
+[0;33mW (17933) wifi:m f probe req l=0[0m
+
+[0;33mW (18053) wifi:m f probe req l=0[0m
+
+[0;33mW (18173) wifi:m f probe req l=0[0m
+
+[0;33mW (18293) wifi:m f probe req l=0[0m
+
+[0;33mW (18413) wifi:m f probe req l=0[0m
+
+[0;33mW (18533) wifi:m f probe req l=0[0m
+
+[0;33mW (19733) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (19733) wifi_sta: Retrying Wi-Fi... (8/10)[0m
+[0;33mW (19733) wifi:m f probe req l=0[0m
+
+[0;33mW (19853) wifi:m f probe req l=0[0m
+
+[0;33mW (19973) wifi:m f probe req l=0[0m
+
+[0;33mW (20093) wifi:m f probe req l=0[0m
+
+[0;33mW (20213) wifi:m f probe req l=0[0m
+
+[0;33mW (20333) wifi:m f probe req l=0[0m
+
+[0;33mW (20453) wifi:m f probe req l=0[0m
+
+[0;33mW (20573) wifi:m f probe req l=0[0m
+
+[0;33mW (20693) wifi:m f probe req l=0[0m
+
+[0;33mW (20813) wifi:m f probe req l=0[0m
+
+[0;33mW (20933) wifi:m f probe req l=0[0m
+
+[0;33mW (22133) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (22133) wifi_sta: Retrying Wi-Fi... (9/10)[0m
+[0;33mW (22133) wifi:m f probe req l=0[0m
+
+[0;33mW (22253) wifi:m f probe req l=0[0m
+
+[0;33mW (22373) wifi:m f probe req l=0[0m
+
+[0;33mW (22493) wifi:m f probe req l=0[0m
+
+[0;33mW (22613) wifi:m f probe req l=0[0m
+
+[0;33mW (22733) wifi:m f probe req l=0[0m
+
+[0;33mW (22853) wifi:m f probe req l=0[0m
+
+[0;33mW (22973) wifi:m f probe req l=0[0m
+
+[0;33mW (23093) wifi:m f probe req l=0[0m
+
+[0;33mW (23213) wifi:m f probe req l=0[0m
+
+[0;33mW (23333) wifi:m f probe req l=0[0m
+
+[0;33mW (24533) wifi_sta: Disconnected (reason=201)[0m
+[0;33mW (24533) wifi_sta: Retrying Wi-Fi... (10/10)[0m
+[0;33mW (24533) wifi:m f probe req l=0[0m
+
+[0;33mW (24653) wifi:m f probe req l=0[0m
+
+[0;33mW (24773) wifi:m f probe req l=0[0m
+
+[0;33mW (24903) wifi:m f probe req l=0[0m
+
+[0;33mW (25023) wifi:m f probe req l=0[0m
+
+[0;33mW (25143) wifi:m f probe req l=0[0m
+
+[0;33mW (25263) wifi:m f probe req l=0[0m
+
+[0;33mW (25383) wifi:m f probe req l=0[0m
+
+[0;33mW (25503) wifi:m f probe req l=0[0m
+
+[0;33mW (25623) wifi:m f probe req l=0[0m
+
+[0;33mW (25743) wifi:m f probe req l=0[0m
+
+[0;33mW (26943) wifi_sta: Disconnected (reason=201)[0m
+[1;31mE (26943) wifi_sta: Wi-Fi failed after 10 retries[0m
+[1;31mE (26943) app: Wi-Fi init failed: ESP_FAIL[0m
+[0;32mI (26943) main_task: Returned from app_main()[0m

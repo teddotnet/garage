@@ -1,0 +1,17 @@
+"idf_component.yml" file was found for components:
+	/home/bjorn/esp/esp-video-components/esp_video
+	/home/bjorn/esp/esp-video-components/esp_cam_sensor
+	/home/bjorn/esp/esp-video-components/esp_ipa
+	/home/bjorn/esp/esp-video-components/esp_sccb_intf
+	/home/bjorn/projects/p4_mqtt_cam/components/esp_hosted
+However, the component manager is not enabled.
+CMake Error at /home/bjorn/esp/esp-video-components/esp_cam_sensor/CMakeLists.txt:222 (include):
+  include could not find requested file:
+
+    package_manager
+
+
+CMake Error at /home/bjorn/esp/esp-video-components/esp_cam_sensor/CMakeLists.txt:223 (cu_pkg_define_version):
+  Unknown CMake command "cu_pkg_define_version".
+
+

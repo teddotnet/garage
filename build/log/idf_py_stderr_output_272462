@@ -1,0 +1,13 @@
+CMake Error at /home/bjorn/esp/esp-idf/tools/cmake/build.cmake:628 (message):
+  ERROR: Cannot establish a connection to the component registry.  Are you
+  connected to the internet?
+
+  URL:
+  https://components-file.espressif.com/components/espressif/cmake_utilities.json
+
+
+Call Stack (most recent call first):
+  /home/bjorn/esp/esp-idf/tools/cmake/project.cmake:722 (idf_build_process)
+  CMakeLists.txt:17 (project)
+
+

@@ -1,0 +1,10 @@
+-- Component directory /home/bjorn/projects/p4_mqtt_cam/components/esp_wifi_remote does not contain a CMakeLists.txt file. No component will be added
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32p4
+NOTICE: Manifest files have changed, solving dependencies.
+NOTICE: Using component placed at /home/bjorn/esp/esp-video-components/esp_sccb_intf for dependency "esp_sccb_intf"(introduced by component "esp_cam_sensor")
+NOTICE: Using component placed at /home/bjorn/esp/esp-video-components/esp_cam_sensor for dependency "esp_cam_sensor", specified in /home/bjorn/esp/esp-video-components/esp_video/idf_component.yml
+NOTICE: Using component placed at /home/bjorn/esp/esp-video-components/esp_ipa for dependency "esp_ipa", specified in /home/bjorn/esp/esp-video-components/esp_video/idf_component.yml
+NOTICE: Using component placed at /home/bjorn/esp/esp-video-components/esp_sccb_intf for dependency "esp_sccb_intf"(introduced by component "esp_cam_sensor"), specified in /home/bjorn/esp/esp-video-components/esp_video/idf_component.yml
+..-- Configuring incomplete, errors occurred!

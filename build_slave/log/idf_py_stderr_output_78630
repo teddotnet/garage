@@ -1,0 +1,17 @@
+warning: the int symbol ESP_HOSTED_BT_UART_PORT_ESP32 (defined at /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/main/Kconfig.projbuild:809) has a non-int range [BTDM_CTRL_HCI_UART_NO (undefined), BTDM_CTRL_HCI_UART_NO (undefined)]
+warning: the int symbol ESP_HOSTED_BT_UART_BAUDRATE_ESP32 (defined at /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/main/Kconfig.projbuild:815) has a non-int range [BTDM_CTRL_HCI_UART_BAUDRATE (undefined), BTDM_CTRL_HCI_UART_BAUDRATE (undefined)]
+info: INFO: Symbol ESP_WIFI_DPP_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/bjorn/esp/esp-idf/components/esp_wifi/Kconfig:626
+    /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/main/Kconfig.projbuild:893
+info: INFO: Symbol WIFI_CMD_DEFAULT_COUNTRY_NONE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/main/Kconfig.projbuild:1250
+    /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/managed_components/esp-qa__wifi-cmd/Kconfig:9
+info: INFO: Symbol WIFI_CMD_DEFAULT_COUNTRY_CN defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/managed_components/esp-qa__wifi-cmd/Kconfig:13
+    /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/main/Kconfig.projbuild:1254
+info: INFO: Choice WIFI_CMD_DEFAULT_COUNTRY defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/managed_components/esp-qa__wifi-cmd/Kconfig:3
+    /home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/main/Kconfig.projbuild:1244
+*************************************************************************************
+                    Building ESP-Hosted-MCU FW :: 2.8.0 
+*************************************************************************************

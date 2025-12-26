@@ -1,0 +1,117 @@
+menu "P4 MQTT Cam"
+
+config P4_WIFI_SSID
+    string "Wi-Fi SSID"
+    default ""
+    help
+        SSID for the Wi-Fi network.
+
+config P4_WIFI_PASS
+    string "Wi-Fi password"
+    default ""
+    help
+        Password for the Wi-Fi network.
+
+config P4_WIFI_USE_BSSID_LOCK
+    bool "Lock to a specific BSSID/channel"
+    default n
+    help
+        Enable to lock connection to a specific AP BSSID and channel.
+
+config P4_WIFI_BSSID
+    string "Wi-Fi BSSID (AA:BB:CC:DD:EE:FF)"
+    default ""
+    help
+        Access point BSSID to lock to. Only used when BSSID lock is enabled.
+
+config P4_WIFI_CHANNEL
+    int "Wi-Fi channel (0 = auto)"
+    default 0
+    help
+        Channel to use with BSSID lock. Use 0 for auto.
+
+config P4_MQTT_BROKER_URI
+    string "MQTT broker URI"
+    default "mqtt://192.168.1.10:1883"
+    help
+        MQTT broker URI, e.g. mqtt://192.168.1.10:1883
+
+config P4_MQTT_TOPIC
+    string "MQTT topic for video"
+    default "cam/vid"
+    help
+        MQTT topic to publish video chunks.
+
+config P4_CAPTURE_SECONDS
+    int "Capture duration seconds"
+    default 10
+    help
+        Number of seconds to capture video.
+
+endmenu
+
+menu "P4 Ethernet"
+
+choice P4_ETH_PHY_MODEL
+    prompt "Ethernet PHY device"
+    default P4_ETH_PHY_LAN87XX
+    help
+        Select the Ethernet PHY device. If unsure, try LAN87xx first.
+
+    config P4_ETH_PHY_GENERIC
+        bool "Generic 802.3 PHY"
+
+    config P4_ETH_PHY_IP101
+        bool "IP101"
+
+    config P4_ETH_PHY_RTL8201
+        bool "RTL8201/SR8201"
+
+    config P4_ETH_PHY_LAN87XX
+        bool "LAN87xx"
+
+    config P4_ETH_PHY_DP83848
+        bool "DP83848"
+
+    config P4_ETH_PHY_KSZ80XX
+        bool "KSZ80xx"
+endchoice
+
+config P4_ETH_MDC_GPIO
+    int "SMI MDC GPIO number"
+    default 31
+
+config P4_ETH_MDIO_GPIO
+    int "SMI MDIO GPIO number"
+    default 52
+
+config P4_ETH_PHY_RST_GPIO
+    int "PHY Reset GPIO number (-1 to disable)"
+    default 51
+
+config P4_ETH_PHY_ADDR
+    int "PHY Address (-1 for auto)"
+    default 1
+
+config P4_ETH_USE_STATIC_IP
+    bool "Use static IP (direct laptop connection)"
+    default n
+    help
+        Enable if you're connecting the board directly to a laptop with no DHCP server.
+
+config P4_ETH_STATIC_IP
+    string "Static IP address"
+    default "192.168.7.2"
+    depends on P4_ETH_USE_STATIC_IP
+
+config P4_ETH_STATIC_NETMASK
+    string "Static netmask"
+    default "255.255.255.0"
+    depends on P4_ETH_USE_STATIC_IP
+
+config P4_ETH_STATIC_GW
+    string "Static gateway"
+    default "192.168.7.1"
+    depends on P4_ETH_USE_STATIC_IP
+
+endmenu

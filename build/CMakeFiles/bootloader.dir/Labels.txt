@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/bjorn/projects/p4_mqtt_cam/build/CMakeFiles/bootloader
+/home/bjorn/projects/p4_mqtt_cam/build/CMakeFiles/bootloader.rule
+/home/bjorn/projects/p4_mqtt_cam/build/CMakeFiles/bootloader-complete.rule
+/home/bjorn/projects/p4_mqtt_cam/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/bjorn/projects/p4_mqtt_cam/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/bjorn/projects/p4_mqtt_cam/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/bjorn/projects/p4_mqtt_cam/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/bjorn/projects/p4_mqtt_cam/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/bjorn/projects/p4_mqtt_cam/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/bjorn/projects/p4_mqtt_cam/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

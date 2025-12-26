@@ -1,0 +1,16 @@
+[1/8] Performing build step for 'bootloader'
+[1/1] cd /home/bjorn/projects/p4_mqtt_cam/build/bootloader/esp-idf/esptool_py && /home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/bjorn/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x2000 /home/bjorn/projects/p4_mqtt_cam/build/bootloader/bootloader.bin
+Bootloader binary size 0x5870 bytes. 0x790 bytes (8%) free.
+[2/8] No install step for 'bootloader'
+[3/8] Completed 'bootloader'
+[4/8] Generating ld/sections.ld
+[5/8] Building C object CMakeFiles/p4_mqtt_cam.elf.dir/project_elf_src_esp32p4.c.obj
+[6/8] Linking CXX executable p4_mqtt_cam.elf
+[7/8] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32p4 image...
+Merged 3 ELF sections
+Successfully created esp32p4 image.
+Generated /home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.bin
+[8/8] cd /home/bjorn/projects/p4_mqtt_cam/build/esp-idf/esptool_py && /home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/bjorn/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/bjorn/projects/p4_mqtt_cam/build/partition_table/partition-table.bin /home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.bin
+p4_mqtt_cam.bin binary size 0xe30b0 bytes. Smallest app partition is 0x100000 bytes. 0x1cf50 bytes (11%) free.

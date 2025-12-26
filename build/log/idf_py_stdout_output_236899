@@ -1,0 +1,74 @@
+[1/12] Linking C static library esp-idf/usb/libusb.a
+[2/12] Performing build step for 'bootloader'
+[1/1] cd /home/bjorn/projects/p4_mqtt_cam/build/bootloader/esp-idf/esptool_py && /home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/bjorn/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x2000 /home/bjorn/projects/p4_mqtt_cam/build/bootloader/bootloader.bin
+Bootloader binary size 0x5870 bytes. 0x790 bytes (8%) free.
+[3/12] No install step for 'bootloader'
+[4/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[5/12] Linking C static library esp-idf/main/libmain.a
+[6/12] Completed 'bootloader'
+[7/12] Generating ld/sections.ld
+[8/12] Building C object CMakeFiles/p4_mqtt_cam.elf.dir/project_elf_src_esp32p4.c.obj
+[9/12] Linking CXX executable p4_mqtt_cam.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32p4 image...
+Merged 3 ELF sections
+Successfully created esp32p4 image.
+Generated /home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.bin
+[11/12] cd /home/bjorn/projects/p4_mqtt_cam/build/esp-idf/esptool_py && /home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/bjorn/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/bjorn/projects/p4_mqtt_cam/build/partition_table/partition-table.bin /home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.bin
+p4_mqtt_cam.bin binary size 0xa6870 bytes. Smallest app partition is 0x100000 bytes. 0x59790 bytes (35%) free.
+[11/12] cd /home/bjorn/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/bjorn/esp/esp-idf -D "SERIAL_TOOL=/home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python;;/home/bjorn/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32p4" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/bjorn/projects/p4_mqtt_cam/build -P /home/bjorn/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32p4 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x2000 bootloader/bootloader.bin 0x10000 p4_mqtt_cam.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-P4 (revision v0.1)
+Features: High-Performance MCU
+Crystal is 40MHz
+MAC: 60:55:f9:f9:49:00
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00002000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000b6fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 22640 bytes to 13937...
+Writing at 0x00002000... (100 %)
+Wrote 22640 bytes (13937 compressed) at 0x00002000 in 0.6 seconds (effective 284.2 kbit/s)...
+Hash of data verified.
+Compressed 682096 bytes to 359713...
+Writing at 0x00010000... (4 %)
+Writing at 0x0001ddb8... (9 %)
+Writing at 0x00028c5b... (13 %)
+Writing at 0x0002fccf... (18 %)
+Writing at 0x00036dee... (22 %)
+Writing at 0x0003eb18... (27 %)
+Writing at 0x00047182... (31 %)
+Writing at 0x0004e956... (36 %)
+Writing at 0x0005587b... (40 %)
+Writing at 0x0005c14a... (45 %)
+Writing at 0x00062c2e... (50 %)
+Writing at 0x00069801... (54 %)
+Writing at 0x0006ff36... (59 %)
+Writing at 0x0007671e... (63 %)
+Writing at 0x0007d5a8... (68 %)
+Writing at 0x000844b1... (72 %)
+Writing at 0x0008b4f9... (77 %)
+Writing at 0x000925c4... (81 %)
+Writing at 0x00098fb2... (86 %)
+Writing at 0x000a00d2... (90 %)
+Writing at 0x000a76dc... (95 %)
+Writing at 0x000ae608... (100 %)
+Wrote 682096 bytes (359713 compressed) at 0x00010000 in 9.2 seconds (effective 595.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 463.9 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

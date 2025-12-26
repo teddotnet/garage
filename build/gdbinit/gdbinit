@@ -1,0 +1,2 @@
+source /home/bjorn/projects/p4_mqtt_cam/build/gdbinit/symbols
+source /home/bjorn/projects/p4_mqtt_cam/build/gdbinit/connect

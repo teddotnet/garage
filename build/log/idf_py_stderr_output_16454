@@ -1,0 +1,629 @@
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m--- Warning: Failed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', '/home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.elf', '-ex', 'target remote | "/home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python" -m esp_idf_panic_decoder --target esp32p4 "/tmp/tmp8q6z7oyz"', '-ex', 'bt']' returned non-zero exit status 1.
+--- Warning: b'Remote communication error.  Target disconnected: error while reading: Connection reset by peer.\nNo stack.\n'
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m--- Warning: Failed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', '/home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.elf', '-ex', 'target remote | "/home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python" -m esp_idf_panic_decoder --target esp32p4 "/tmp/tmp5laviykd"', '-ex', 'bt']' returned non-zero exit status 1.
+--- Warning: b'Remote communication error.  Target disconnected: error while reading: Connection reset by peer.\nNo stack.\n'
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m--- Warning: Failed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', '/home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.elf', '-ex', 'target remote | "/home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python" -m esp_idf_panic_decoder --target esp32p4 "/tmp/tmpkjokzy90"', '-ex', 'bt']' returned non-zero exit status 1.
+--- Warning: b'Remote communication error.  Target disconnected: error while reading: Connection reset by peer.\nNo stack.\n'
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m--- Warning: Failed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', '/home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.elf', '-ex', 'target remote | "/home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python" -m esp_idf_panic_decoder --target esp32p4 "/tmp/tmpuwi7phhd"', '-ex', 'bt']' returned non-zero exit status 1.
+--- Warning: b'Remote communication error.  Target disconnected: error while reading: Connection reset by peer.\nNo stack.\n'
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0;33m--- Warning: Failed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', '/home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.elf', '-ex', 'target remote | "/home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python" -m esp_idf_panic_decoder --target esp32p4 "/tmp/tmp6vr0y_i7"', '-ex', 'bt']' returned non-zero exit status 1.
+--- Warning: b'Remote communication error.  Target disconnected: error while reading: Connection reset by peer.\nNo stack.\n'
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4000cf62: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m150[0m
+[0m--- 0x4ff10802: [0;33mabort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/newlib/abort.c[0m[0m:[1;31m35[0m
+[0m--- 0x4ff066f8: [0;33mesp_system_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m86[0m
+[0m--- 0x4000cf62: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m150[0m
+[0m--- 0x4ff0a454: [0;33mxTaskPriorityDisinherit[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m5212[0m
+[0m--- 0x4ff06784: [0;33mprvCopyDataToQueue[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m2470[0m
+[0m--- 0x4ff06cdc: [0;33mxQueueGenericSend[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m1057[0m
+[0m--- 0x40015a82: [0;33mhmac_sha256_vector[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c[0m[0m:[1;31m365[0m
+[0m--- 0x40015ce6: [0;33mpbkdf2_sha1[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c[0m[0m:[1;31m779[0m
+[0m--- 0x40015b90: [0;33maes_128_cbc_encrypt[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c[0m[0m:[1;31m471[0m
+[0m--- 0x40015c08: [0;33maes_128_cbc_decrypt[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c[0m[0m:[1;31m493[0m
+[0m--- 0x40015e18: [0;33momac1_aes_128[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c[0m[0m:[1;31m949[0m
+[0m--- 0x40016350: [0;33mccmp_decrypt[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/src/crypto/ccmp.c[0m[0m:[1;31m141[0m
+[0m--- 0x40016414: [0;33mccmp_encrypt[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/src/crypto/ccmp.c[0m[0m:[1;31m193[0m
+[0m--- 0x4001589a: [0;33mesp_aes_gmac[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/src/crypto/crypto_ops.c[0m[0m:[1;31m22[0m
+[0m--- 0x40015a6a: [0;33msha256_vector[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c[0m[0m:[1;31m90[0m
+[0m--- 0x4000f900: [0;33mesp_task_wdt_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m716[0m
+[0m--- 0x4000c920: [0;33mapp_main[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4000c922: [0;33mapp_main[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4007d1b8: [0;33mmain_task[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m209[0m
+[0m--- 0x4ff0747c: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m258[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4000cf5e: [0;33mwifi_sta_start_and_wait[0m[0m at [0;32m/home/bjorn/projects/p4_mqtt_cam/main/wifi_sta.c[0m[0m:[1;31m145[0m
+[0m--- 0x4ff066f5: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4ff00eda: [0;33mpanic_abort[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m491[0m
+[0m--- 0x4ff06700: [0;33m__ubsan_include[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff04062: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff041be: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/bjorn/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m

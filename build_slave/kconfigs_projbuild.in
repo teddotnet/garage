@@ -1,0 +1,6 @@
+source "/home/bjorn/esp/esp-idf/components/bootloader/Kconfig.projbuild"
+source "/home/bjorn/esp/esp-idf/components/esp_app_format/Kconfig.projbuild"
+source "/home/bjorn/esp/esp-idf/components/esp_rom/Kconfig.projbuild"
+source "/home/bjorn/esp/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "/home/bjorn/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+source "/home/bjorn/projects/p4_mqtt_cam/components/esp_hosted/slave/main/Kconfig.projbuild"

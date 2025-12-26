@@ -1,0 +1,9 @@
+dependencies:
+  espressif/esp_video:
+    override_path: /home/bjorn/esp/esp-video-components/esp_video
+  espressif/esp_cam_sensor:
+    override_path: /home/bjorn/esp/esp-video-components/esp_cam_sensor
+  espressif/esp_ipa:
+    override_path: /home/bjorn/esp/esp-video-components/esp_ipa
+  espressif/esp_sccb_intf:
+    override_path: /home/bjorn/esp/esp-video-components/esp_sccb_intf

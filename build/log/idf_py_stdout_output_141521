@@ -1,0 +1,88 @@
+[1/20] Linking C static library esp-idf/mqtt/libmqtt.a
+[2/20] Linking C static library esp-idf/spiffs/libspiffs.a
+[3/20] Linking C static library esp-idf/usb/libusb.a
+[4/20] Building C object esp-idf/espressif__esp_serial_slave_link/CMakeFiles/__idf_espressif__esp_serial_slave_link.dir/essl_sdio_defs.c.obj
+[5/20] Performing build step for 'bootloader'
+[1/1] cd /home/bjorn/projects/p4_mqtt_cam/build/bootloader/esp-idf/esptool_py && /home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/bjorn/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x2000 /home/bjorn/projects/p4_mqtt_cam/build/bootloader/bootloader.bin
+Bootloader binary size 0x5870 bytes. 0x790 bytes (8%) free.
+[6/20] No install step for 'bootloader'
+[7/20] Building C object esp-idf/espressif__eppp_link/CMakeFiles/__idf_espressif__eppp_link.dir/eppp_netif_tun.c.obj
+[8/20] Completed 'bootloader'
+[9/20] Building C object esp-idf/espressif__eppp_link/CMakeFiles/__idf_espressif__eppp_link.dir/eppp_uart.c.obj
+[10/20] Building C object esp-idf/espressif__esp_serial_slave_link/CMakeFiles/__idf_espressif__esp_serial_slave_link.dir/essl_spi.c.obj
+[11/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ethernet.c.obj
+[12/20] Linking C static library esp-idf/espressif__esp_serial_slave_link/libespressif__esp_serial_slave_link.a
+[13/20] Building C object esp-idf/espressif__eppp_link/CMakeFiles/__idf_espressif__eppp_link.dir/eppp_link.c.obj
+[14/20] Linking C static library esp-idf/espressif__eppp_link/libespressif__eppp_link.a
+[15/20] Linking C static library esp-idf/main/libmain.a
+[16/20] Generating ld/sections.ld
+[17/20] Linking CXX executable p4_mqtt_cam.elf
+[18/20] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32p4 image...
+Merged 3 ELF sections
+Successfully created esp32p4 image.
+Generated /home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.bin
+[19/20] cd /home/bjorn/projects/p4_mqtt_cam/build/esp-idf/esptool_py && /home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/bjorn/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/bjorn/projects/p4_mqtt_cam/build/partition_table/partition-table.bin /home/bjorn/projects/p4_mqtt_cam/build/p4_mqtt_cam.bin
+p4_mqtt_cam.bin binary size 0xe3ab0 bytes. Smallest app partition is 0x100000 bytes. 0x1c550 bytes (11%) free.
+[19/20] cd /home/bjorn/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/bjorn/esp/esp-idf -D "SERIAL_TOOL=/home/bjorn/.espressif/python_env/idf5.4_py3.10_env/bin/python;;/home/bjorn/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32p4" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/bjorn/projects/p4_mqtt_cam/build -P /home/bjorn/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32p4 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x2000 bootloader/bootloader.bin 0x10000 p4_mqtt_cam.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port /dev/ttyUSB0
+Connecting...
+Chip is ESP32-P4 (revision v0.1)
+Features: High-Performance MCU
+Crystal is 40MHz
+MAC: 60:55:f9:f9:49:00
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00002000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f3fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 22640 bytes to 13937...
+Writing at 0x00002000... (100 %)
+Wrote 22640 bytes (13937 compressed) at 0x00002000 in 0.6 seconds (effective 288.9 kbit/s)...
+Hash of data verified.
+Compressed 932528 bytes to 449770...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001eb4c... (7 %)
+Writing at 0x0002c56d... (10 %)
+Writing at 0x00038b98... (14 %)
+Writing at 0x0004808c... (17 %)
+Writing at 0x0004eb83... (21 %)
+Writing at 0x0005596e... (25 %)
+Writing at 0x0005d790... (28 %)
+Writing at 0x00067bcc... (32 %)
+Writing at 0x000705ea... (35 %)
+Writing at 0x00078523... (39 %)
+Writing at 0x00081201... (42 %)
+Writing at 0x00087c96... (46 %)
+Writing at 0x0008ec17... (50 %)
+Writing at 0x00095aae... (53 %)
+Writing at 0x0009cc72... (57 %)
+Writing at 0x000a3a10... (60 %)
+Writing at 0x000aa7dc... (64 %)
+Writing at 0x000b1a2f... (67 %)
+Writing at 0x000b86eb... (71 %)
+Writing at 0x000beefc... (75 %)
+Writing at 0x000c5f72... (78 %)
+Writing at 0x000cc6d2... (82 %)
+Writing at 0x000d2dd0... (85 %)
+Writing at 0x000d94aa... (89 %)
+Writing at 0x000dfa5c... (92 %)
+Writing at 0x000e7cd7... (96 %)
+Writing at 0x000ef17e... (100 %)
+Wrote 932528 bytes (449770 compressed) at 0x00010000 in 11.9 seconds (effective 629.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 464.9 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
