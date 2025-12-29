@@ -8056,6 +8056,107 @@
                 "range": null,
                 "title": "Capture duration seconds",
                 "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Stop capture after this many frames if set. Use 0 to ignore.",
+                "id": "P4_CAPTURE_FRAMES",
+                "name": "P4_CAPTURE_FRAMES",
+                "range": null,
+                "title": "Capture frame count (0 = ignore)",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Requested capture width. Use 0 to keep the camera default.",
+                "id": "P4_CAPTURE_WIDTH",
+                "name": "P4_CAPTURE_WIDTH",
+                "range": null,
+                "title": "Capture width (0 = default)",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Requested capture height. Use 0 to keep the camera default.",
+                "id": "P4_CAPTURE_HEIGHT",
+                "name": "P4_CAPTURE_HEIGHT",
+                "range": null,
+                "title": "Capture height (0 = default)",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "JPEG quality used for encoding. Lower is faster/smaller.",
+                "id": "P4_JPEG_QUALITY",
+                "name": "P4_JPEG_QUALITY",
+                "range": null,
+                "title": "JPEG quality (10-95)",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Use 4:2:0 subsampling for smaller/faster JPEGs.",
+                "id": "P4_JPEG_SUBSAMPLE_420",
+                "name": "P4_JPEG_SUBSAMPLE_420",
+                "range": null,
+                "title": "JPEG subsampling 4:2:0 (faster)",
+                "type": "bool"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "P4_RECORD_TO_FLASH",
+                        "help": "Duration to record to flash.",
+                        "id": "P4_RECORD_SECONDS",
+                        "name": "P4_RECORD_SECONDS",
+                        "range": null,
+                        "title": "Record duration seconds",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "P4_RECORD_TO_FLASH",
+                        "help": "Mount point for the flash filesystem.",
+                        "id": "P4_FLASH_MOUNT_PATH",
+                        "name": "P4_FLASH_MOUNT_PATH",
+                        "range": null,
+                        "title": "Flash mount path",
+                        "type": "string"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "P4_RECORD_TO_FLASH",
+                        "help": "Periodically publish recorded frames and delete them.",
+                        "id": "P4_FLASH_UPLOAD_ENABLE",
+                        "name": "P4_FLASH_UPLOAD_ENABLE",
+                        "range": null,
+                        "title": "Upload recorded frames over MQTT",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "P4_RECORD_TO_FLASH",
+                        "help": "Interval between flash scan/upload passes.",
+                        "id": "P4_FLASH_UPLOAD_PERIOD_MS",
+                        "name": "P4_FLASH_UPLOAD_PERIOD_MS",
+                        "range": null,
+                        "title": "Flash upload period (ms)",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "help": "When enabled, captures are written to flash and can be uploaded later.",
+                "id": "P4_RECORD_TO_FLASH",
+                "name": "P4_RECORD_TO_FLASH",
+                "range": null,
+                "title": "Record to flash (SPIFFS) instead of MQTT",
+                "type": "bool"
             }
         ],
         "depends_on": null,

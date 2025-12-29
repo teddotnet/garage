@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "p4_mqtt_cam",
-    "project_version":    "1",
+    "project_version":    "d814f08-dirty",
     "project_path":       "/home/bjorn/projects/p4_mqtt_cam",
     "idf_path":           "/home/bjorn/esp/esp-idf",
     "build_dir":          "/home/bjorn/projects/p4_mqtt_cam/build",
@@ -1250,12 +1250,12 @@
             "dir": "/home/bjorn/projects/p4_mqtt_cam/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "esp_event", "esp_eth", "esp_netif", "esp_wifi", "mqtt", "nvs_flash", "esp_driver_jpeg", "esp_video" ],
+            "reqs": [ "esp_event", "esp_eth", "esp_netif", "esp_wifi", "mqtt", "nvs_flash", "esp_driver_jpeg", "spiffs", "esp_video" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/bjorn/projects/p4_mqtt_cam/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/bjorn/projects/p4_mqtt_cam/main/main.c", "/home/bjorn/projects/p4_mqtt_cam/main/ethernet.c", "/home/bjorn/projects/p4_mqtt_cam/main/mqtt_video.c", "/home/bjorn/projects/p4_mqtt_cam/main/video_streamer.c", "/home/bjorn/projects/p4_mqtt_cam/main/app_video.c" ],
+            "sources": [ "/home/bjorn/projects/p4_mqtt_cam/main/main.c", "/home/bjorn/projects/p4_mqtt_cam/main/ethernet.c", "/home/bjorn/projects/p4_mqtt_cam/main/mqtt_video.c", "/home/bjorn/projects/p4_mqtt_cam/main/video_packetizer.c", "/home/bjorn/projects/p4_mqtt_cam/main/video_streamer.c", "/home/bjorn/projects/p4_mqtt_cam/main/flash_store.c", "/home/bjorn/projects/p4_mqtt_cam/main/flash_uploader.c", "/home/bjorn/projects/p4_mqtt_cam/main/app_video.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -2886,7 +2886,7 @@
             "prefix": "idf",
             "dir": "/home/bjorn/projects/p4_mqtt_cam/main",
             "lib": "__idf_main",
-            "reqs": [ "esp_event", "esp_eth", "esp_netif", "esp_wifi", "mqtt", "nvs_flash", "esp_driver_jpeg", "esp_video" ],
+            "reqs": [ "esp_event", "esp_eth", "esp_netif", "esp_wifi", "mqtt", "nvs_flash", "esp_driver_jpeg", "spiffs", "esp_video" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],

@@ -1,0 +1,207 @@
+ESP-ROM:esp32p4-eco1-20240205
+Build:Feb  5 2024
+rst:0x1 (POWERON),boot:0x30f (SPI_FAST_FLASH_BOOT)
+SPI mode:DIO, clock div:1
+load:0x4ff33ce0,len:0x1674
+load:0x4ff2abd0,len:0xe64
+load:0x4ff2cbd0,len:0x3344
+entry 0x4ff2abda
+[0;33mW (24) pmu_param: hp_cali_dbias not burnt in efuse, use default.[0m
+[0;33mW (25) pmu_param: lp_cali_dbias not burnt in efuse, use default.[0m
+[0;32mI (36) boot: ESP-IDF v5.4.3-544-ge6cad886e8 2nd stage bootloader[0m
+[0;32mI (36) boot: compile time Dec 24 2025 14:34:19[0m
+[0;32mI (36) boot: Multicore bootloader[0m
+[0;32mI (39) boot: chip revision: v0.1[0m
+[0;32mI (40) boot: efuse block revision: v0.0[0m
+[0;32mI (44) boot.esp32p4: SPI Speed      : 80MHz[0m
+[0;32mI (48) boot.esp32p4: SPI Mode       : DIO[0m
+[0;32mI (52) boot.esp32p4: SPI Flash Size : 2MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (60) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=400b0020 size=2a830h (174128) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0003a858 vaddr=30100000 size=00088h (   136) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=0003a8e8 vaddr=4ff00000 size=05730h ( 22320) load[0m
+[0;32mI (139) esp_image: segment 3: paddr=00040020 vaddr=40000020 size=a1530h (660784) map[0m
+[0;32mI (251) esp_image: segment 4: paddr=000e1558 vaddr=4ff05730 size=0efcch ( 61388) load[0m
+[0;32mI (264) esp_image: segment 5: paddr=000f052c vaddr=4ff14700 size=02c30h ( 11312) load[0m
+[0;32mI (272) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (273) boot: Disabling RNG early entropy source...[0m
+[0;33mW (282) pmu_pvt: blk_version is less than 2, pvt auto dbias init not supported in efuse.[0m
+[0;32mI (284) hex_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (284) hex_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (287) hex_psram: DriveStr.    : 0x00 (25 Ohm)[0m
+[0;32mI (291) hex_psram: dev id       : 0x03 (generation 4)[0m
+[0;32mI (296) hex_psram: density      : 0x07 (256 Mbit)[0m
+[0;32mI (300) hex_psram: good-die     : 0x06 (Pass)[0m
+[0;32mI (304) hex_psram: SRF          : 0x02 (Slow Refresh)[0m
+[0;32mI (309) hex_psram: BurstType    : 0x00 ( Wrap)[0m
+[0;32mI (313) hex_psram: BurstLen     : 0x03 (2048 Byte)[0m
+[0;32mI (318) hex_psram: BitMode      : 0x01 (X16 Mode)[0m
+[0;32mI (322) hex_psram: Readlatency  : 0x04 (14 cycles@Fixed)[0m
+[0;32mI (327) hex_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (332) MSPI DQS: tuning success, best phase id is 0[0m
+[0;32mI (513) MSPI DQS: tuning success, best delayline id is 15[0m
+[0;32mI (514) esp_psram: Found 32MB PSRAM device[0m
+[0;32mI (514) esp_psram: Speed: 200MHz[0m
+[0;32mI (514) hex_psram: psram CS IO is dedicated[0m
+[0;32mI (518) cpu_start: Multicore app[0m
+[0;32mI (1471) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1480) cpu_start: GPIO 38 and 37 are used as console UART I/O pins[0m
+[0;32mI (1480) cpu_start: Pro cpu start user code[0m
+[0;32mI (1481) cpu_start: cpu freq: 360000000 Hz[0m
+[0;32mI (1483) app_init: Application information:[0m
+[0;32mI (1487) app_init: Project name:     p4_mqtt_cam[0m
+[0;32mI (1491) app_init: App version:      d814f08-dirty[0m
+[0;32mI (1495) app_init: Compile time:     Dec 27 2025 07:30:13[0m
+[0;32mI (1501) app_init: ELF file SHA256:  dbc812c8e...[0m
+[0;32mI (1505) app_init: ESP-IDF:          v5.4.3-544-ge6cad886e8[0m
+[0;32mI (1510) efuse_init: Min chip rev:     v0.1[0m
+[0;32mI (1514) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (1518) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (1522) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1529) heap_init: At 4FF19EB0 len 00021110 (132 KiB): RETENT_RAM[0m
+[0;32mI (1534) heap_init: At 4FF3AFC0 len 00004BF0 (18 KiB): RAM[0m
+[0;32mI (1540) heap_init: At 4FF40000 len 00060000 (384 KiB): RAM[0m
+[0;32mI (1545) heap_init: At 50108080 len 00007F80 (31 KiB): RTCRAM[0m
+[0;32mI (1550) heap_init: At 30100088 len 00001F78 (7 KiB): TCM[0m
+[0;32mI (1556) esp_psram: Adding pool of 32768K of PSRAM memory to heap allocator[0m
+[0;32mI (1563) spi_flash: detected chip: generic[0m
+[0;32mI (1566) spi_flash: flash io: dio[0m
+[0;33mW (1569) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (1582) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1588) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1595) main_task: Started on CPU0[0m
+[0;32mI (1615) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1615) main_task: Calling app_main()[0m
+[0;32mI (1625) eth: Static IP set to 192.168.7.2[0m
+[0;32mI (1675) esp_eth.netif.netif_glue: 60:55:f9:f9:49:00[0m
+[0;32mI (1675) esp_eth.netif.netif_glue: ethernet attached to netif[0m
+[0;32mI (5075) eth: Ethernet started[0m
+[0;32mI (5075) eth: Ethernet link up 60:55:f9:f9:49:00[0m
+[0;32mI (5075) esp_netif_handlers: eth ip: 192.168.7.2, mask: 255.255.255.0, gw: 192.168.7.1[0m
+[0;32mI (5075) eth: ETHIP:192.168.7.2[0m
+[0;32mI (5075) eth: Ethernet connected[0m
+[0;32mI (5085) mqtt_video: MQTT started: mqtt://192.168.7.1:1883[0m
+[0;32mI (5085) sc2336: Detected Camera sensor PID=0xcb3a[0m
+[0;32mI (5115) app_video: version: 1.4.1[0m
+[0;32mI (5115) app_video: driver:  MIPI-CSI[0m
+[0;32mI (5115) app_video: card:    MIPI-CSI[0m
+[0;32mI (5115) app_video: bus:     esp32p4:MIPI-CSI[0m
+[0;32mI (5125) app_video: width=1280 height=720[0m
+[1;31mE (5125) csi_video: format width or height is invalid[0m
+[1;31mE (5125) esp_video: video->ops->set_format=102[0m
+[1;31mE (5135) app_video: failed to set format[0m
+[1;31mE (5135) vid: Failed to open /dev/video0[0m
+[0;33mW (5145) vid: Try selecting a different camera sensor in menuconfig.[0m
+[1;31mE (5145) app: Video capture failed: ESP_FAIL[0m
+[0;32mI (5155) main_task: Returned from app_main()[0m
+[1;31mE (15095) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (15095) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (15095) mqtt_client: Error transport connect[0m
+ESP-ROM:esp32p4-eco1-20240205
+Build:Feb  5 2024
+rst:0x1 (POWERON),boot:0x30f (SPI_FAST_FLASH_BOOT)
+SPI mode:DIO, clock div:1
+load:0x4ff33ce0,len:0x1674
+load:0x4ff2abd0,len:0xe64
+load:0x4ff2cbd0,len:0x3344
+entry 0x4ff2abda
+[0;33mW (24) pmu_param: hp_cali_dbias not burnt in efuse, use default.[0m
+[0;33mW (25) pmu_param: lp_cali_dbias not burnt in efuse, use default.[0m
+[0;32mI (36) boot: ESP-IDF v5.4.3-544-ge6cad886e8 2nd stage bootloader[0m
+[0;32mI (36) boot: compile time Dec 24 2025 14:34:19[0m
+[0;32mI (36) boot: Multicore bootloader[0m
+[0;32mI (39) boot: chip revision: v0.1[0m
+[0;32mI (40) boot: efuse block revision: v0.0[0m
+[0;32mI (44) boot.esp32p4: SPI Speed      : 80MHz[0m
+[0;32mI (48) boot.esp32p4: SPI Mode       : DIO[0m
+[0;32mI (52) boot.esp32p4: SPI Flash Size : 2MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (60) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=400b0020 size=2a830h (174128) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0003a858 vaddr=30100000 size=00088h (   136) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=0003a8e8 vaddr=4ff00000 size=05730h ( 22320) load[0m
+[0;32mI (139) esp_image: segment 3: paddr=00040020 vaddr=40000020 size=a1530h (660784) map[0m
+[0;32mI (251) esp_image: segment 4: paddr=000e1558 vaddr=4ff05730 size=0efcch ( 61388) load[0m
+[0;32mI (264) esp_image: segment 5: paddr=000f052c vaddr=4ff14700 size=02c30h ( 11312) load[0m
+[0;32mI (272) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (273) boot: Disabling RNG early entropy source...[0m
+[0;33mW (282) pmu_pvt: blk_version is less than 2, pvt auto dbias init not supported in efuse.[0m
+[0;32mI (284) hex_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (284) hex_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (287) hex_psram: DriveStr.    : 0x00 (25 Ohm)[0m
+[0;32mI (291) hex_psram: dev id       : 0x03 (generation 4)[0m
+[0;32mI (296) hex_psram: density      : 0x07 (256 Mbit)[0m
+[0;32mI (300) hex_psram: good-die     : 0x06 (Pass)[0m
+[0;32mI (304) hex_psram: SRF          : 0x02 (Slow Refresh)[0m
+[0;32mI (309) hex_psram: BurstType    : 0x00 ( Wrap)[0m
+[0;32mI (313) hex_psram: BurstLen     : 0x03 (2048 Byte)[0m
+[0;32mI (318) hex_psram: BitMode      : 0x01 (X16 Mode)[0m
+[0;32mI (322) hex_psram: Readlatency  : 0x04 (14 cycles@Fixed)[0m
+[0;32mI (327) hex_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (332) MSPI DQS: tuning success, best phase id is 0[0m
+[0;32mI (513) MSPI DQS: tuning success, best delayline id is 15[0m
+[0;32mI (514) esp_psram: Found 32MB PSRAM device[0m
+[0;32mI (514) esp_psram: Speed: 200MHz[0m
+[0;32mI (514) hex_psram: psram CS IO is dedicated[0m
+[0;32mI (518) cpu_start: Multicore app[0m
+[0;32mI (1471) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1480) cpu_start: GPIO 38 and 37 are used as console UART I/O pins[0m
+[0;32mI (1480) cpu_start: Pro cpu start user code[0m
+[0;32mI (1481) cpu_start: cpu freq: 360000000 Hz[0m
+[0;32mI (1483) app_init: Application information:[0m
+[0;32mI (1487) app_init: Project name:     p4_mqtt_cam[0m
+[0;32mI (1491) app_init: App version:      d814f08-dirty[0m
+[0;32mI (1495) app_init: Compile time:     Dec 27 2025 07:30:13[0m
+[0;32mI (1501) app_init: ELF file SHA256:  dbc812c8e...[0m
+[0;32mI (1505) app_init: ESP-IDF:          v5.4.3-544-ge6cad886e8[0m
+[0;32mI (1510) efuse_init: Min chip rev:     v0.1[0m
+[0;32mI (1514) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (1518) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (1522) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1529) heap_init: At 4FF19EB0 len 00021110 (132 KiB): RETENT_RAM[0m
+[0;32mI (1534) heap_init: At 4FF3AFC0 len 00004BF0 (18 KiB): RAM[0m
+[0;32mI (1540) heap_init: At 4FF40000 len 00060000 (384 KiB): RAM[0m
+[0;32mI (1545) heap_init: At 50108080 len 00007F80 (31 KiB): RTCRAM[0m
+[0;32mI (1550) heap_init: At 30100088 len 00001F78 (7 KiB): TCM[0m
+[0;32mI (1556) esp_psram: Adding pool of 32768K of PSRAM memory to heap allocator[0m
+[0;32mI (1563) spi_flash: detected chip: generic[0m
+[0;32mI (1566) spi_flash: flash io: dio[0m
+[0;33mW (1569) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (1582) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1588) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1595) main_task: Started on CPU0[0m
+[0;32mI (1615) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1615) main_task: Calling app_main()[0m
+[0;32mI (1625) eth: Static IP set to 192.168.7.2[0m
+[0;32mI (1675) esp_eth.netif.netif_glue: 60:55:f9:f9:49:00[0m
+[0;32mI (1675) esp_eth.netif.netif_glue: ethernet attached to netif[0m
+[0;32mI (3775) eth: Ethernet started[0m
+[0;32mI (3775) eth: Ethernet link up 60:55:f9:f9:49:00[0m
+[0;32mI (3775) esp_netif_handlers: eth ip: 192.168.7.2, mask: 255.255.255.0, gw: 192.168.7.1[0m
+[0;32mI (3775) eth: ETHIP:192.168.7.2[0m
+[0;32mI (3775) eth: Ethernet connected[0m
+[0;32mI (3785) mqtt_video: MQTT started: mqtt://192.168.7.1:1883[0m
+[0;32mI (3785) sc2336: Detected Camera sensor PID=0xcb3a[0m
+[0;32mI (3815) app_video: version: 1.4.1[0m
+[0;32mI (3815) app_video: driver:  MIPI-CSI[0m
+[0;32mI (3815) app_video: card:    MIPI-CSI[0m
+[0;32mI (3815) app_video: bus:     esp32p4:MIPI-CSI[0m
+[0;32mI (3825) app_video: width=1280 height=720[0m
+[1;31mE (3825) csi_video: format width or height is invalid[0m
+[1;31mE (3825) esp_video: video->ops->set_format=102[0m
+[1;31mE (3835) app_video: failed to set format[0m
+[1;31mE (3835) vid: Failed to open /dev/video0[0m
+[0;33mW (3845) vid: Try selecting a different camera sensor in menuconfig.[0m
+[1;31mE (3845) app: Video capture failed: ESP_FAIL[0m
+[0;32mI (3855) main_task: Returned from app_main()[0m

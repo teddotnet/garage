@@ -48,6 +48,70 @@ config P4_CAPTURE_SECONDS
     help
         Number of seconds to capture video.
 
+config P4_CAPTURE_FRAMES
+    int "Capture frame count (0 = ignore)"
+    default 0
+    help
+        Stop capture after this many frames if set. Use 0 to ignore.
+
+config P4_CAPTURE_WIDTH
+    int "Capture width (0 = default)"
+    default 640
+    help
+        Requested capture width. Use 0 to keep the camera default.
+
+config P4_CAPTURE_HEIGHT
+    int "Capture height (0 = default)"
+    default 480
+    help
+        Requested capture height. Use 0 to keep the camera default.
+
+config P4_JPEG_QUALITY
+    int "JPEG quality (10-95)"
+    default 50
+    help
+        JPEG quality used for encoding. Lower is faster/smaller.
+
+config P4_JPEG_SUBSAMPLE_420
+    bool "JPEG subsampling 4:2:0 (faster)"
+    default y
+    help
+        Use 4:2:0 subsampling for smaller/faster JPEGs.
+
+config P4_RECORD_TO_FLASH
+    bool "Record to flash (SPIFFS) instead of MQTT"
+    default n
+    help
+        When enabled, captures are written to flash and can be uploaded later.
+
+config P4_RECORD_SECONDS
+    int "Record duration seconds"
+    default 15
+    depends on P4_RECORD_TO_FLASH
+    help
+        Duration to record to flash.
+
+config P4_FLASH_MOUNT_PATH
+    string "Flash mount path"
+    default "/spiffs"
+    depends on P4_RECORD_TO_FLASH
+    help
+        Mount point for the flash filesystem.
+
+config P4_FLASH_UPLOAD_ENABLE
+    bool "Upload recorded frames over MQTT"
+    default y
+    depends on P4_RECORD_TO_FLASH
+    help
+        Periodically publish recorded frames and delete them.
+
+config P4_FLASH_UPLOAD_PERIOD_MS
+    int "Flash upload period (ms)"
+    default 1000
+    depends on P4_RECORD_TO_FLASH
+    help
+        Interval between flash scan/upload passes.
+
 endmenu
 
 menu "P4 Ethernet"

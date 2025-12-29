@@ -1,6 +1,8 @@
 #include "video_streamer.h"
 #include "mqtt_video.h"
 #include "app_video.h"
+#include "flash_store.h"
+#include "video_packetizer.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -16,31 +18,9 @@
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "esp_random.h"
+#include "sdkconfig.h"
 
 static const char *TAG = "vid";
-
-// ---- Packetization ----
-#define VID_MAGIC 0x56494430u   // 'VID0'
-#define CHUNK_MAX 2048
-
-// FourCC helper (MJPG)
-#define FCC(a,b,c,d) ((uint32_t)(a) | ((uint32_t)(b)<<8) | ((uint32_t)(c)<<16) | ((uint32_t)(d)<<24))
-#define FOURCC_MJPG FCC('M','J','P','G')
-
-#pragma pack(push, 1)
-typedef struct {
-    uint32_t magic;
-    uint32_t clip_id;
-    uint32_t frame_id;
-    uint32_t ts_ms;
-    uint16_t chunk_id;
-    uint16_t chunk_count;
-    uint32_t frame_size;
-    uint32_t fourcc;     // 'MJPG' for JPEG frames, or 0 if unknown
-    uint16_t width;      // optional metadata
-    uint16_t height;     // optional metadata
-} vid_hdr_t;
-#pragma pack(pop)
 
 typedef struct {
     int video_fd;
@@ -53,6 +33,7 @@ typedef struct {
     size_t jpeg_buf_size;
     jpeg_encoder_handle_t encoder;
     bool encoder_ready;
+    bool record_to_flash;
 } capture_ctx_t;
 
 static capture_ctx_t s_cap;
@@ -106,42 +87,6 @@ static void jpeg_encoder_deinit(void)
     s_cap.encoder_ready = false;
 }
 
-static void publish_jpeg_frame(const uint8_t *jpeg, uint32_t jpeg_size, uint32_t ts_ms, uint16_t width, uint16_t height)
-{
-    uint16_t chunk_count = (jpeg_size + CHUNK_MAX - 1) / CHUNK_MAX;
-
-    for (uint16_t chunk_id = 0; chunk_id < chunk_count; chunk_id++) {
-        size_t off = (size_t)chunk_id * CHUNK_MAX;
-        size_t remain = jpeg_size - off;
-        size_t take = remain > CHUNK_MAX ? CHUNK_MAX : remain;
-
-        uint8_t pkt[sizeof(vid_hdr_t) + CHUNK_MAX];
-        vid_hdr_t hdr = {
-            .magic = VID_MAGIC,
-            .clip_id = s_cap.clip_id,
-            .frame_id = s_cap.frame_id,
-            .ts_ms = ts_ms,
-            .chunk_id = chunk_id,
-            .chunk_count = chunk_count,
-            .frame_size = jpeg_size,
-            .fourcc = FOURCC_MJPG,
-            .width = width,
-            .height = height,
-        };
-
-        memcpy(pkt, &hdr, sizeof(hdr));
-        memcpy(pkt + sizeof(hdr), jpeg + off, take);
-
-        esp_err_t err = mqtt_video_publish_chunk(pkt, sizeof(hdr) + take);
-        if (err != ESP_OK) {
-            ESP_LOGE(TAG, "MQTT publish failed: %s", esp_err_to_name(err));
-            return;
-        }
-    }
-
-    s_cap.frame_id++;
-}
-
 static void camera_frame_cb(uint8_t *camera_buf, uint8_t camera_buf_index, uint32_t camera_buf_hes, uint32_t camera_buf_ves, size_t camera_buf_len)
 {
     (void)camera_buf_index;
@@ -156,8 +101,8 @@ static void camera_frame_cb(uint8_t *camera_buf, uint8_t camera_buf_index, uint3
 
     jpeg_encode_cfg_t enc_cfg = {
         .src_type = JPEG_ENCODE_IN_FORMAT_RGB565,
-        .sub_sample = JPEG_DOWN_SAMPLING_YUV422,
-        .image_quality = 80,
+        .sub_sample = CONFIG_P4_JPEG_SUBSAMPLE_420 ? JPEG_DOWN_SAMPLING_YUV420 : JPEG_DOWN_SAMPLING_YUV422,
+        .image_quality = CONFIG_P4_JPEG_QUALITY,
         .width = camera_buf_hes,
         .height = camera_buf_ves,
     };
@@ -179,16 +124,48 @@ static void camera_frame_cb(uint8_t *camera_buf, uint8_t camera_buf_index, uint3
     }
 
     uint32_t ts_ms = (uint32_t)((esp_timer_get_time() - s_cap.start_us) / 1000);
-    publish_jpeg_frame(s_cap.jpeg_buf, jpeg_size, ts_ms, (uint16_t)camera_buf_hes, (uint16_t)camera_buf_ves);
+    video_frame_meta_t meta = {
+        .clip_id = s_cap.clip_id,
+        .frame_id = s_cap.frame_id,
+        .ts_ms = ts_ms,
+        .width = (uint16_t)camera_buf_hes,
+        .height = (uint16_t)camera_buf_ves,
+    };
+
+    if (s_cap.record_to_flash) {
+        esp_err_t err = flash_store_write_frame(
+            meta.clip_id, meta.frame_id, meta.ts_ms, meta.width, meta.height,
+            s_cap.jpeg_buf, jpeg_size
+        );
+        if (err != ESP_OK) {
+            ESP_LOGE(TAG, "Flash write failed: %s", esp_err_to_name(err));
+            return;
+        }
+    } else {
+        esp_err_t err = video_packetizer_publish_jpeg(&meta, s_cap.jpeg_buf, jpeg_size);
+        if (err != ESP_OK) {
+            ESP_LOGE(TAG, "MQTT publish failed: %s", esp_err_to_name(err));
+            return;
+        }
+    }
+
+    s_cap.frame_id++;
 }
 
-esp_err_t capture_video_seconds(int seconds)
+static esp_err_t capture_common(int seconds, bool record_to_flash, uint32_t *out_frames, float *out_fps)
 {
-    if (seconds <= 0) return ESP_ERR_INVALID_ARG;
+    const int frames_limit = CONFIG_P4_CAPTURE_FRAMES;
+    const bool use_time_limit = seconds > 0;
+    const bool use_frame_limit = frames_limit > 0;
+
+    if (!use_time_limit && !use_frame_limit) {
+        return ESP_ERR_INVALID_ARG;
+    }
 
     memset(&s_cap, 0, sizeof(s_cap));
     s_cap.clip_id = new_clip_id();
     s_cap.start_us = esp_timer_get_time();
+    s_cap.record_to_flash = record_to_flash;
 
     esp_video_init_csi_config_t csi_config = {
         .sccb_config = {
@@ -243,9 +220,24 @@ esp_err_t capture_video_seconds(int seconds)
         return err;
     }
 
-    ESP_LOGI(TAG, "Capture start: clip_id=%" PRIu32 " seconds=%d dev=%s", s_cap.clip_id, seconds, ESP_VIDEO_MIPI_CSI_DEVICE_NAME);
+    ESP_LOGI(TAG, "Capture start: clip_id=%" PRIu32 " seconds=%d frames=%d dev=%s mode=%s",
+             s_cap.clip_id, seconds, frames_limit, ESP_VIDEO_MIPI_CSI_DEVICE_NAME,
+             record_to_flash ? "flash" : "mqtt");
 
-    vTaskDelay(pdMS_TO_TICKS(seconds * 1000));
+    int64_t end_us = 0;
+    if (use_time_limit) {
+        end_us = s_cap.start_us + (int64_t)seconds * 1000000;
+    }
+
+    while (true) {
+        if (use_frame_limit && s_cap.frame_id >= (uint32_t)frames_limit) {
+            break;
+        }
+        if (use_time_limit && esp_timer_get_time() >= end_us) {
+            break;
+        }
+        vTaskDelay(pdMS_TO_TICKS(20));
+    }
     app_video_stream_task_stop(fd);
     app_video_wait_video_stop();
 
@@ -254,5 +246,23 @@ esp_err_t capture_video_seconds(int seconds)
     app_video_close(fd);
     jpeg_encoder_deinit();
 
+    if (out_frames) {
+        *out_frames = s_cap.frame_id;
+    }
+    if (out_fps) {
+        int64_t elapsed_us = esp_timer_get_time() - s_cap.start_us;
+        *out_fps = elapsed_us > 0 ? (float)s_cap.frame_id * 1000000.0f / (float)elapsed_us : 0.0f;
+    }
+
     return ESP_OK;
+}
+
+esp_err_t capture_video_seconds(int seconds)
+{
+    return capture_common(seconds, false, NULL, NULL);
+}
+
+esp_err_t record_video_seconds_to_flash(int seconds, uint32_t *out_frames, float *out_fps)
+{
+    return capture_common(seconds, true, out_frames, out_fps);
 }

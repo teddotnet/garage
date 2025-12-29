@@ -18,6 +18,7 @@
 #include "linux/videodev2.h"
 #include "esp_video_init.h"
 #include "app_video.h"
+#include "sdkconfig.h"
 
 static const char *TAG = "app_video";
 
@@ -74,14 +75,21 @@ int app_video_open(char *dev, video_fmt_t init_fmt)
 
     ESP_LOGI(TAG, "width=%" PRIu32 " height=%" PRIu32, default_format.fmt.pix.width, default_format.fmt.pix.height);
 
-    app_camera_video.camera_buf_hes = default_format.fmt.pix.width;
-    app_camera_video.camera_buf_ves = default_format.fmt.pix.height;
+    uint32_t req_width = CONFIG_P4_CAPTURE_WIDTH;
+    uint32_t req_height = CONFIG_P4_CAPTURE_HEIGHT;
+    bool need_set = default_format.fmt.pix.pixelformat != init_fmt;
+    if (req_width > 0 && req_width != default_format.fmt.pix.width) {
+        need_set = true;
+    }
+    if (req_height > 0 && req_height != default_format.fmt.pix.height) {
+        need_set = true;
+    }
 
-    if (default_format.fmt.pix.pixelformat != init_fmt) {
+    if (need_set) {
         struct v4l2_format format = {
             .type = type,
-            .fmt.pix.width = default_format.fmt.pix.width,
-            .fmt.pix.height = default_format.fmt.pix.height,
+            .fmt.pix.width = (req_width > 0) ? req_width : default_format.fmt.pix.width,
+            .fmt.pix.height = (req_height > 0) ? req_height : default_format.fmt.pix.height,
             .fmt.pix.pixelformat = init_fmt,
         };
 
@@ -89,7 +97,15 @@ int app_video_open(char *dev, video_fmt_t init_fmt)
             ESP_LOGE(TAG, "failed to set format");
             goto exit_0;
         }
+
+        if (ioctl(fd, VIDIOC_G_FMT, &default_format) != 0) {
+            ESP_LOGE(TAG, "failed to get format after set");
+            goto exit_0;
+        }
     }
+
+    app_camera_video.camera_buf_hes = default_format.fmt.pix.width;
+    app_camera_video.camera_buf_ves = default_format.fmt.pix.height;
 
     app_camera_video.video_stop_sem = xSemaphoreCreateBinary();
 

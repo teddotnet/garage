@@ -44,6 +44,12 @@ def parse_args():
     ap.add_argument("--topic", default="cam/vid", help="MQTT topic to subscribe to")
     ap.add_argument("--outdir", default="out", help="Output directory for frames")
     ap.add_argument("--keep-seconds", type=int, default=10, help="Drop incomplete frames after this time")
+    ap.add_argument(
+        "--fps",
+        type=int,
+        default=0,
+        help="Print FPS over the last N frames (0 disables)",
+    )
     return ap.parse_args()
 
 
@@ -75,8 +81,13 @@ def main():
     ensure_outdir(args.outdir)
 
     frames = {}
+    fps_window = args.fps
+    fps_ts = []
+    fps_start_ms = None
+    fps_frames = 0
 
     def on_message(client, userdata, msg):
+        nonlocal fps_start_ms, fps_frames
         hdr, body = decode_hdr(msg.payload)
         if not hdr or hdr["magic"] != VID_MAGIC:
             return
@@ -108,6 +119,18 @@ def main():
                 f"saved {out_path} size={len(frame)} md5={md5} avg_byte={avg:.1f} "
                 f"{hdr['width']}x{hdr['height']} ts={hdr['ts_ms']}ms"
             )
+            if fps_window > 1:
+                if fps_start_ms is None:
+                    fps_start_ms = hdr["ts_ms"]
+                fps_frames += 1
+                fps_ts.append(hdr["ts_ms"])
+                if len(fps_ts) >= fps_window:
+                    delta_ms = fps_ts[-1] - fps_ts[-fps_window]
+                    if delta_ms > 0:
+                        fps = (fps_window - 1) / (delta_ms / 1000.0)
+                        total_ms = fps_ts[-1] - fps_start_ms
+                        total_fps = (fps_frames - 1) / (total_ms / 1000.0) if total_ms > 0 else 0.0
+                        print(f"fps_window={fps:.2f} fps_total={total_fps:.2f}")
 
     def on_connect(client, userdata, flags, reason_code, properties=None):
         if reason_code == 0:

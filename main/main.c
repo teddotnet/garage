@@ -3,9 +3,12 @@
 #include "esp_event.h"
 #include "esp_netif.h"
 #include "esp_log.h"
+#include <inttypes.h>
 #include "ethernet.h"
 #include "mqtt_video.h"
 #include "video_streamer.h"
+#include "flash_store.h"
+#include "flash_uploader.h"
 #include "sdkconfig.h"
 
 #ifdef CONFIG_ESP_EXT_CONN_ENABLE
@@ -43,9 +46,32 @@ void app_main(void) {
         return;
     }
 
+#if CONFIG_P4_RECORD_TO_FLASH
+    err = flash_store_init();
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Flash init failed: %s", esp_err_to_name(err));
+        return;
+    }
+
+    err = flash_uploader_start();
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Flash uploader failed: %s", esp_err_to_name(err));
+        return;
+    }
+
+    uint32_t frames = 0;
+    float fps = 0.0f;
+    err = record_video_seconds_to_flash(CONFIG_P4_RECORD_SECONDS, &frames, &fps);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Flash record failed: %s", esp_err_to_name(err));
+        return;
+    }
+    ESP_LOGI(TAG, "Flash record done: frames=%" PRIu32 " fps=%.2f", frames, fps);
+#else
     err = capture_video_seconds(CONFIG_P4_CAPTURE_SECONDS);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Video capture failed: %s", esp_err_to_name(err));
         return;
     }
+#endif
 }
