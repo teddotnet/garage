@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "p4_mqtt_cam",
-    "project_version":    "d814f08-dirty",
+    "project_version":    "463af6a-dirty",
     "project_path":       "/home/bjorn/projects/p4_mqtt_cam",
     "idf_path":           "/home/bjorn/esp/esp-idf",
     "build_dir":          "/home/bjorn/projects/p4_mqtt_cam/build",

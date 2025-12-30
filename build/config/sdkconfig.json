@@ -905,6 +905,7 @@
     "P4_JPEG_QUALITY": 30,
     "P4_JPEG_SUBSAMPLE_420": true,
     "P4_MQTT_BROKER_URI": "mqtt://192.168.7.1:1883",
+    "P4_MQTT_CTRL_TOPIC": "cam/ctl",
     "P4_MQTT_TOPIC": "cam/vid",
     "P4_RECORD_TO_FLASH": false,
     "P4_REV3_MSPI_WORKAROUND_SIZE": 0,

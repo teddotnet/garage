@@ -8050,6 +8050,16 @@
             {
                 "children": [],
                 "depends_on": null,
+                "help": "MQTT topic to publish control messages (start/end).",
+                "id": "P4_MQTT_CTRL_TOPIC",
+                "name": "P4_MQTT_CTRL_TOPIC",
+                "range": null,
+                "title": "MQTT topic for control",
+                "type": "string"
+            },
+            {
+                "children": [],
+                "depends_on": null,
                 "help": "Number of seconds to capture video.",
                 "id": "P4_CAPTURE_SECONDS",
                 "name": "P4_CAPTURE_SECONDS",
